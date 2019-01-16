@@ -1,0 +1,32 @@
+<ion-header no-border>
+    <ion-toolbar color="{{page.color}}">
+        <ion-buttons start style="position: absolute; width: 95%;">
+            <button ion-button icon-only navPop>
+        <ion-icon name="arrow-back" color="dark"></ion-icon>
+      </button>
+        </ion-buttons>
+        <ion-title>
+            <img src="assets/img/logo-dark.png" class="titlu">
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [ngStyle]="{'background-color': page.hex}" padding>
+
+    <div class="nav_page">
+     <!-- <div class="buton" [ngStyle]="{'background-color': page.hex}"></div>  -->
+        <div *ngIf="titlu=='All topics'" class="poster topics"></div>
+        <div *ngIf="titlu=='Entertainment'" class="poster entertainment"></div>
+        <div *ngIf="titlu=='Sport'" class="poster sport"></div>
+        <div *ngIf="titlu=='Indoor'" class="poster indoor"></div>
+        <div *ngIf="titlu=='w/ Friends'" class="poster friends"></div>
+        <div *ngIf="titlu=='Knowledge'" class="poster knowledge"></div>
+        
+        <h1 style="width: 100%; text-align: center; color: #333; margin-bottom: 2em;">{{titlu}}</h1>
+        <button class="buton_mic" ion-button large color="{{page.color}}" (click)="showConfirm(5)">Easy</button>
+        <button class="buton_mic" ion-button large (click)="showConfirm(15)">Medium</button>
+        <button class="buton_mic" ion-button large (click)="showConfirm(40)">Hard</button>
+<!--        <h4>Energie: {{energy}}</h4>-->
+    </div>
+
+</ion-content>

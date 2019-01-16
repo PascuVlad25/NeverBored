@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-navbar color="golden">
+      <ion-buttons end style="position: absolute; width: 95%;">
+      <button ion-button icon-only (click)="f()">
+        <ion-icon name="settings" [ngStyle]="{'color': '#d77330'}"></ion-icon>
+      </button>
+          </ion-buttons>
+  <ion-title><img class="titlu" src="assets/img/logo-dark.png"></ion-title>
+  </ion-navbar>
+     <ion-item>
+      <ion-avatar item-start>
+      <img src="assets/img/vlad.png">
+    </ion-avatar>
+    <h2><b>{{userName}}<br></b></h2>
+<!--         <h2><b> </b></h2>-->
+    <p style="width: 5em; float: left;">level {{current_level}}</p>
+    <div style="width: 70%; height: 1.3em; float: left; position: relative;">
+         
+        <div style="height: 0.5em; width: 100%; border-radius: 5px; background-color: #ddd; margin-top: 0.2em;"></div>  <!--progress bar -->
+   <div [ngStyle]="{'width': obiect.progres, 'background-color': obiect.color}" class="progress_bar"></div> 
+        
+          </div>
+  </ion-item>
+</ion-header>
+
+<ion-content>
+    
+  <ion-list>
+      
+   <ion-item *ngFor="let badge of badges">
+      <ion-thumbnail item-start>
+      <img src="{{badge.src}}">
+    </ion-thumbnail>
+    <h2>{{badge.title}}</h2>
+    <p>{{badge.rank}}</p>
+    <button ion-button clear item-end (click)="viewBadge(badge)">View</button>
+    </ion-item>
+      
+      
+
+<!--      <button ion-button (click)="show_sport_badge()">Aflare puncte</button>-->
+  <!--    <button ion-button (click)="show_level()">Aflare level</button>
+      <h2>puncte: {{puncte_afisare}} din {{max_points}}</h2> -->
+<!--
+      <h2>rank: {{level_afisare}}</h2>
+      <h2>puncte: {{sport_afisare}}</h2>
+-->
+
+  </ion-list>
+    <button ion-button (click)="reset()">Reset</button>
+</ion-content>

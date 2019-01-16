@@ -1,0 +1,17 @@
+import { Component } from '@angular/core';
+
+import { AboutPage } from '../ideas/about';
+import { ContactPage } from '../progress/contact';
+import { HomePage } from '../to_do/home';
+
+@Component({
+  templateUrl: 'tabs.html'
+})
+export class TabsPage {
+
+  tab1Root = HomePage;
+  tab2Root = AboutPage;
+  tab3Root = ContactPage;
+
+    
+}

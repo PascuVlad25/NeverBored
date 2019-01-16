@@ -1,0 +1,93 @@
+<ion-header no-border>
+    <ion-navbar color="gradient1">
+<!--    <ion-navbar color="golden">-->
+        <ion-buttons end style="position: absolute; width: 95%;">
+            <button ion-button icon-only (click)="f()">
+                <ion-icon name="settings" [ngStyle]="{'color': '#d77330'}"></ion-icon>
+            </button>
+        </ion-buttons>
+        <ion-title><img src="assets/img/logo-dark.png" class="titlu"></ion-title>
+    </ion-navbar>
+</ion-header>
+
+<!--<ion-content style="background-color: #fdbc30;">-->
+<ion-content>
+
+    <div [ngStyle]="stil_tab[0]">
+        <!-- INCOMING ACTIVITIES -->
+        <div class="grupa">
+            <!-- (click)="resize(0)" -->
+            <img src="assets/img/text.png" style="width: 100%; margin-top: 0.8em;">
+        </div>
+        <div class="lista_taskuri">
+            <div class="empty_text" *ngIf="!items[0]" (click)="to_ideas()">
+                <!-- Empty task list -->
+                <p>Click here to get ideas</p>
+
+            </div>
+
+            <ion-list no-lines inset>
+
+                <button class="task_item" *ngFor="let task of items" ion-item detail-none (click)="checkTask(task)" (press)="optionsTask(task)">                
+                    <div style="float: left; width: 90%; white-space: normal;">{{task.name}}</div>
+                    <ion-icon class="task_icon" name="{{task.icon}}" [ngStyle]="{color: task.color}"></ion-icon></button>
+            </ion-list>
+        </div>
+    </div>
+
+
+    <!--    <button ion-button (click)="refill()">Refill energy</button>-->
+
+    <div class="tab">
+        <div *ngIf="energy" class="grupa-patrat" (click)="to_ideas()">
+            <h5 *ngIf="energy==1" class="tab_text" style="color: #fff;">You can get <br> {{energy}} idea</h5>
+            <h5 *ngIf="energy!=1" class="tab_text" style="color: #fff;">You can get <br> {{energy}} ideas</h5>
+            <ion-icon  class="icon-big" name="ios-bulb" color="light"></ion-icon>
+        </div>
+        
+        <div *ngIf="!energy" class="grupa-patrat dark">
+            <h6 class="tab_text">No more energy</h6>
+            <p class="tab_subtext">Come back tomorrow</p>
+            <ion-icon class="icon-big" name="ios-bulb-outline" color="gray"></ion-icon>
+        </div>
+        
+        <div *ngIf="user.firstName" class="grupa-patrat tab_profil" (click)="to_progress()">
+            <h5 class="tab_text" style="color: #fff;">Hi there, {{user.firstName}}!</h5>
+            <p class="tab_subtext" style="color: #1e427b">See your progress</p>
+            <ion-icon  class="icon-big" name="trophy" color="light"></ion-icon>
+        </div>
+        
+        <div *ngIf="!user.firstName" class="grupa-patrat tab_profil" (click)="setName()">
+            <h5 class="tab_text" style="color: #fff;">Hi there!</h5>
+            <p class="tab_subtext" style="color: #1e427b">Let's meet each other</p>
+            <ion-icon  class="icon-big" name="ios-happy-outline" color="light"></ion-icon>
+        </div>
+    </div>
+
+    <!--
+    <div class="tab">    
+  <div class="grupa-patrat">   
+        <img src="../../assets/img/done.png" style="width: 100%; margin-top: 0em;">
+        </div>
+  <div class="lista_taskuri">
+        <ion-list inset>
+           <button ion-item disabled><ion-icon name="checkmark-circle-outline" item-start></ion-icon>Watch a movie</button>
+         </ion-list>
+        </div>
+    </div>    
+    
+-->
+    <!--   <div [ngStyle]="stil_tab[2]" >   <!-- NOT COOL -->
+    <!-- <div class="grupa"> <!-- (click)="resize(2)" -->
+    <!--          <img src="../../assets/img/sad.png" style="width: 100%; margin-top: 0.5em;">
+         </div>
+  <div class="lista_taskuri">
+         <ion-list inset>
+           <button ion-item disabled><ion-icon name="close" item-start></ion-icon><del>Get a girlfriend</del></button>
+             <button ion-item disabled><ion-icon name="close" item-start></ion-icon><del>Get a friend</del></button>
+             <button ion-item disabled><ion-icon name="close" item-start></ion-icon><del>Get a  life</del></button>
+         </ion-list>
+      </div>
+    </div>   -->
+
+</ion-content>

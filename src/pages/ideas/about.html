@@ -1,0 +1,39 @@
+<ion-header no-border>
+    <ion-navbar color="dark">
+        <ion-buttons end style="position: absolute; width: 95%;">
+            <button ion-button icon-only (click)="f()">
+        <ion-icon name="settings" [ngStyle]="{'color': '#888'}"></ion-icon>
+      </button>
+        </ion-buttons>
+        <ion-title>
+            <img src="assets/img/logo.png" class="titlu">
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content style="background-color: #222;">
+    <div *ngFor="let tab of tabs">
+    <div class="tab">
+        <div class="grupa {{tab.clasa}}" (click)="navigate(tab)">
+        <i><h3>{{tab.titlu}}</h3></i>
+            <ion-icon class="icon-tabs" name="{{tab.icon}}"></ion-icon>
+        </div>
+    </div>
+        </div>
+   <!-- <div class="tab">
+        <div class="grupa e"></div>
+    </div>
+    <div class="tab">
+        <div class="grupa d"></div>
+    </div>
+    <div class="tab">
+        <div class="grupa c"></div>
+    </div>
+    <div class="tab">
+        <div class="grupa b"></div>
+    </div>
+    <div class="tab">
+        <div class="grupa a"></div>
+    </div>   -->
+
+</ion-content>

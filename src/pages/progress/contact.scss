@@ -1,0 +1,27 @@
+page-contact {
+    .titlu {
+        width: 7em;
+        display: block;
+        margin: auto;
+    }
+    .profil {
+        width: 100%;
+        height: 5em;
+        background-color: red;
+        position: fixed;
+        top: 10em;
+        left: 10em;
+    }
+    .progress_bar {
+        height: 0.5em;
+        width: 70%;
+        border-radius: 5px;
+        margin-top: -0.5em;
+        position: absolute;
+    }
+    
+    ion-thumbnail img {
+        margin-left: -0.3em;
+      padding: 0.2em;
+    }
+}
