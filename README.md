@@ -1,4 +1,4 @@
-This is a starter template for [Ionic](http://ionicframework.com/docs/) projects.
+## Can find the app on: https://vladpascu.me/NeverBored
 
 ## How to use this template
 
